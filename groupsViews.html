@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Card</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <style>
+.form-control-borderless {
+    border: none;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+.jumbotron, .col-lg {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Afinidata</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Grupo</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="group_report.html">Reporte Grupal</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
+  </div>
+</nav>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h2 class="display-4">Grupo #1</h2>
+    <p class="lead">Descripcion del grupo</p>
+  </div>
+</div>
+<div class="container">
+  <div class="row" >
+    <div class="col-lg">
+      <div class="card" style="width: width:100%;">
+          <div class="card-body">
+              <i class='fas fa-user  float-right'  style='font-size:48px;color:orange'></i>
+            <h5 class="card-title">Nombre del niño</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Nombre madre/padre</h6>
+            <p class="card-text">Información básica del niño como edad, número de teléfono, etc. </p>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
+              <a href="https://core.afinidata.com/instances/54309/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true">Reporte</a>
+          </div>
+      </div>
+    </div>
+    <div class="col-lg">
+      <div class="card" style="width: width:100%;">
+          <div class="card-body">
+              <i class='fas fa-user  float-right'  style='font-size:48px;color:cyan'></i>
+            <h5 class="card-title">Nombre del niño</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Nombre madre/padre</h6>
+            <p class="card-text">Información básica del niño como edad, número de teléfono, etc.</p>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
+              <a href="https://core.afinidata.com/instances/54309/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true">Reporte</a>
+          </div>
+      </div>
+    </div>
+      <div class="col-lg">
+      <div class="card" style="width: width:100%;">
+          <div class="card-body">
+              <i class='fas fa-baby  float-right'  style='font-size:48px;color:green'></i>
+            <h5 class="card-title">Nombre del niño</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Nombre madre/padre</h6>
+            <p class="card-text">Información básica del niño como edad, número de teléfono, etc.</p>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
+              <a href="https://core.afinidata.com/instances/54309/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true">Reporte</a>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row" >
+    <div class="col-lg">
+      <div class="card" style="width: width:100%;">
+          <div class="card-body">
+              <i class='fas fa-user  float-right'  style='font-size:48px;color:purple'></i>
+            <h5 class="card-title">Nombre del niño</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Nombre madre/padre</h6>
+            <p class="card-text">Información básica del niño como edad, número de teléfono, etc. </p>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
+              <a href="https://core.afinidata.com/instances/54309/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true">Reporte</a>
+          </div>
+      </div>
+    </div>
+    <div class="col-lg">
+      <div class="card" style="width: width:100%;">
+          <div class="card-body">
+              <i class='fas fa-baby  float-right'  style='font-size:48px;color:black'></i>
+            <h5 class="card-title">Nombre del niño</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Nombre madre/padre</h6>
+            <p class="card-text">Información básica del niño como edad, número de teléfono, etc.</p>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
+              <a href="https://core.afinidata.com/instances/54309/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true">Reporte</a>
+          </div>
+      </div>
+    </div>
+      <div class="col-lg">
+      <div class="card" style="width: width:100%;">
+          <div class="card-body">
+              <i class='fas fa-user  float-right'  style='font-size:48px;color:pink'></i>
+            <h5 class="card-title">Nombre del niño</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Nombre madre/padre</h6>
+            <p class="card-text">Información básica del niño como edad, número de teléfono, etc.</p>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
+              <a href="https://core.afinidata.com/instances/54309/report/" class="btn btn-primary" role="button" target="_blank"  aria-pressed="true">Reporte</a>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row" >
+    <div class="col-lg">
+      <div class="card" style="width: width:100%;">
+          <div class="card-body">
+              <i class='fas fa-baby  float-right'  style='font-size:48px;color:blue'></i>
+            <h5 class="card-title">Nombre del niño</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Nombre madre/padre</h6>
+            <p class="card-text">Información básica del niño como edad, número de teléfono, etc. </p>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
+              <a href="https://core.afinidata.com/instances/54309/report/" class="btn btn-primary" role="button" target="_blank"  aria-pressed="true">Reporte</a>
+          </div>
+      </div>
+    </div>
+    <div class="col-lg">
+      <div class="card" style="width: width:100%;">
+          <div class="card-body">
+              <i class='fas fa-baby  float-right'  style='font-size:48px;color:green'></i>
+            <h5 class="card-title">Nombre del niño</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Nombre madre/padre</h6>
+            <p class="card-text">Información básica del niño como edad, número de teléfono, etc.</p>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
+              <a href="https://core.afinidata.com/instances/54309/report/" class="btn btn-primary" role="button" target="_blank"  aria-pressed="true">Reporte</a>
+          </div>
+      </div>
+    </div>
+      <div class="col-lg">
+      <div class="card" style="width: width:100%;">
+          <div class="card-body">
+              <i class='fas fa-baby  float-right'  style='font-size:48px;color:red'></i>
+            <h5 class="card-title">Nombre del niño</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Nombre madre/padre</h6>
+            <p class="card-text">Información básica del niño como edad, número de teléfono, etc.</p>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
+              <a href="https://core.afinidata.com/instances/54309/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true">Reporte</a>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br/>
+<br/>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Datos demográficos</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+        <h5 class="modal-title" style="padding: 10px;">Datos del niño:</h5>
+          <div class="row" >
+              <ul>
+                  <li>Fue prematuro:
+                        <span class="badge badge-pill badge-success">No fue prematuro</span>
+                  </li>
+                  <li>Aprendizaje:
+                      <span class="badge badge-pill badge-danger">Tiene problemas de aprendizaje</span>
+                  </li>
+                  <li>Discapacidad o riesgo:
+                    <span class="badge badge-pill badge-warning">Tiene discapacidad</span>
+                  </li>
+              </ul>
+            </div>
+        <h5 class="modal-title" style="padding: 10px;">Datos del encargado:</h5>
+          <div class="row">
+              <ul>
+                  <li>Relación con el niño:
+                        <span class="badge badge-pill badge-success">Mamá</span>
+                  </li>
+                  <li>Educación:
+                      <span class="badge badge-pill badge-danger">No asistió a la escuela</span>
+                  </li>
+                  <li>Edad:
+                     <span class="badge badge-pill badge-success">De 30 a 40</span>
+                  </li>
+                  <li>Cuenta con apoyo:
+                     <span class="badge badge-pill badge-success">Si cuenta con el apoyo de su pareja</span>
+                  </li>
+              </ul>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Regresar</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
