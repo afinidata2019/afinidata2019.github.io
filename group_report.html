@@ -100,6 +100,150 @@ var chart3 = new CanvasJS.Chart("chartContainer3", {
 		]
 	}]
 });
+var chart11 = new CanvasJS.Chart("chartContainer11", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Los niños necesitan ser mimados y confortados por su padres cuando se sienten tristes.",
+		fontSize: 15
+	},
+	axisY: {
+		title: "Cantidad de usuarios"
+	},
+	data: [{
+		type: "bar",
+		showInLegend: false,
+		legendMarkerColor: "grey",
+		legendText: "Respuestas",
+		includeZero: true,
+		dataPoints: [
+			{ y: 16, label: "Muy en desacuerdo" },
+			{ y: 26,  label: "En desacuerdo" },
+			{ y: 17,  label: "De acuerdo" },
+			{ y: 30,  label: "Totalmente de acuerdo" },
+		]
+	}]
+});
+var chart21 = new CanvasJS.Chart("chartContainer21", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: " Es importante que los padres ayuden a sus hijos a manejar sus emociones.",
+		fontSize: 15
+	},
+	axisY: {
+		title: "Cantidad de usuarios"
+	},
+	data: [{
+		type: "bar",
+		showInLegend: false,
+		legendMarkerColor: "grey",
+		includeZero: true,
+		legendText: "Respuestas",
+		dataPoints: [
+			{ y: 10, label: "Muy en desacuerdo" },
+			{ y: 20,  label: "En desacuerdo" },
+			{ y: 40,  label: "De acuerdo" },
+			{ y: 50,  label: "Totalmente de acuerdo" },
+		]
+	}]
+});
+var chart31 = new CanvasJS.Chart("chartContainer31", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Los niños que reciben demasiada atención y cariño de sus padres se ponen muy consentidos.",
+		fontSize: 15
+	},
+	axisY: {
+		title: "Cantidad de usuarios"
+	},
+	data: [{
+		type: "bar",
+		showInLegend: false,
+		legendMarkerColor: "grey",
+		includeZero: true,
+		legendText: "Respuestas",
+		dataPoints: [
+			{ y: 30, label: "Muy en desacuerdo" },
+			{ y: 20,  label: "En desacuerdo" },
+			{ y: 15,  label: "De acuerdo" },
+			{ y: 40,  label: "Totalmente de acuerdo" },
+		]
+	}]
+});
+var chart12 = new CanvasJS.Chart("chartContainer12", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Los bebés pueden oir, ver y aprender muchas cosas desde que nacen. ",
+		fontSize: 15
+	},
+	axisY: {
+		title: "Cantidad de usuarios"
+	},
+	data: [{
+		type: "bar",
+		showInLegend: false,
+		legendMarkerColor: "grey",
+		legendText: "Respuestas",
+		includeZero: true,
+		dataPoints: [
+			{ y: 20, label: "Muy en desacuerdo" },
+			{ y: 16,  label: "En desacuerdo" },
+			{ y: 27,  label: "De acuerdo" },
+			{ y: 36,  label: "Totalmente de acuerdo" },
+		]
+	}]
+});
+var chart22 = new CanvasJS.Chart("chartContainer22", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Es bueno dejar que los niños exploren y experimenten.",
+		fontSize: 15
+	},
+	axisY: {
+		title: "Cantidad de usuarios"
+	},
+	data: [{
+		type: "bar",
+		showInLegend: false,
+		legendMarkerColor: "grey",
+		includeZero: true,
+		legendText: "Respuestas",
+		dataPoints: [
+			{ y: 40, label: "Muy en desacuerdo" },
+			{ y: 20,  label: "En desacuerdo" },
+			{ y: 20,  label: "De acuerdo" },
+			{ y: 25,  label: "Totalmente de acuerdo" },
+		]
+	}]
+});
+var chart32 = new CanvasJS.Chart("chartContainer32", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Es importante hablarle a los bebés aunque pareciera que no responden.",
+		fontSize: 15
+	},
+	axisY: {
+		title: "Cantidad de usuarios"
+	},
+	data: [{
+		type: "bar",
+		showInLegend: false,
+		legendMarkerColor: "grey",
+		includeZero: true,
+		legendText: "Respuestas",
+		dataPoints: [
+			{ y: 31, label: "Muy en desacuerdo" },
+			{ y: 20,  label: "En desacuerdo" },
+			{ y: 40,  label: "De acuerdo" },
+			{ y: 10,  label: "Totalmente de acuerdo" },
+		]
+	}]
+});
 
 var chart1A = new CanvasJS.Chart("chartContainer1A", {
 	animationEnabled: true,
@@ -251,6 +395,12 @@ var chart4B = new CanvasJS.Chart("chartContainer4B", {
 chart1.render();
 chart2.render();
 chart3.render();
+chart11.render();
+chart21.render();
+chart31.render();
+chart12.render();
+chart22.render();
+chart32.render();
 chart1A.render();
 chart2A.render();
 chart1B.render();
@@ -341,6 +491,11 @@ chart4B.render();
   </div>
 </div>
 <div class="container">
+  <div class="row-center">
+    <h5>Categoría 1 - Autopercepción cuidador </h5>
+  </div>
+</div>
+<div class="container">
   <div class="row">
     <div class="col-lg">
       <div id="chartContainer1" style="height: 300px; width: 100%;"></div>
@@ -350,6 +505,44 @@ chart4B.render();
     </div>
     <div class="col-lg">
       <div id="chartContainer3" style="height: 300px; width: 100%"></div>
+    </div>
+  </div>
+</div>
+<br/><br/>
+<div class="container">
+  <div class="row-center">
+    <h5>Categoría 2- Apego y crianza responsiva </h5>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg">
+      <div id="chartContainer11" style="height: 300px; width: 100%;"></div>
+    </div>
+    <div class="col-lg">
+      <div id="chartContainer21" style="height: 300px; width: 100%"></div>
+    </div>
+    <div class="col-lg">
+      <div id="chartContainer31" style="height: 300px; width: 100%"></div>
+    </div>
+  </div>
+</div>
+<br/><br/>
+<div class="container">
+  <div class="row-center">
+    <h5>Categoria 3 - Aprendizaje temprano  </h5>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg">
+      <div id="chartContainer12" style="height: 300px; width: 100%;"></div>
+    </div>
+    <div class="col-lg">
+      <div id="chartContainer22" style="height: 300px; width: 100%"></div>
+    </div>
+    <div class="col-lg">
+      <div id="chartContainer32" style="height: 300px; width: 100%"></div>
     </div>
   </div>
 </div>
