@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Bootstrap Card</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -45,15 +46,42 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <div class="container dropdown">
+                <a class="nav-link dropdown-toggle" href="#"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Ordenar por
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Edad</a>
+                  <a class="dropdown-item" href="#">Más activo</a>
+                  <a class="dropdown-item" href="#">Mayor riesgo</a>
+                </div>
+            </div>
+          </li>
+            <li class="nav-item active">
+            <div class="container dropdown">
+                <a class="nav-link dropdown-toggle" href="#"  id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Buscar por
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                  <a class="dropdown-item" href="#">Nombre</a>
+                  <a class="dropdown-item" href="#">Edad</a>
+                </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+          </li>
+        </ul>
     </form>
   </div>
 </nav>
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h2 class="display-4">Grupo #1</h2>
-    <p class="lead">Descripcion del grupo</p>
+    <p class="lead">Descripción del grupo</p>
   </div>
 </div>
 <div class="container">
@@ -64,7 +92,14 @@
               <i class='fas fa-user  float-right'  style='font-size:48px;color:orange'></i>
             <h5 class="card-title">Nombre del niño</h5>
             <h6 class="card-subtitle mb-2 text-muted">Nombre madre/padre</h6>
-            <p class="card-text">Información básica del niño como edad, número de teléfono, etc. </p>
+            <p class="card-text">
+                <ul>
+                  <li>Edad: 3 meses</li>
+                  <li>Fecha de nacimiento: 01/05/2020</li>
+                  <li>Teléfono: 86753099</li>
+                  <li>Última vez activo: 10/08/2020</li>
+              </ul>
+            </p>
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
               <a href="https://core.afinidata.com/instances/54309/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true">Reporte</a>
           </div>
@@ -76,7 +111,14 @@
               <i class='fas fa-user  float-right'  style='font-size:48px;color:cyan'></i>
             <h5 class="card-title">Nombre del niño</h5>
             <h6 class="card-subtitle mb-2 text-muted">Nombre madre/padre</h6>
-            <p class="card-text">Información básica del niño como edad, número de teléfono, etc.</p>
+            <p class="card-text">
+                <ul>
+                  <li>Edad: 3 meses</li>
+                  <li>Fecha de nacimiento: 01/05/2020</li>
+                  <li>Teléfono: 86753099</li>
+                  <li>Última vez activo: 10/08/2020</li>
+              </ul>
+            </p>
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
               <a href="https://core.afinidata.com/instances/54309/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true">Reporte</a>
           </div>
@@ -88,7 +130,14 @@
               <i class='fas fa-baby  float-right'  style='font-size:48px;color:green'></i>
             <h5 class="card-title">Nombre del niño</h5>
             <h6 class="card-subtitle mb-2 text-muted">Nombre madre/padre</h6>
-            <p class="card-text">Información básica del niño como edad, número de teléfono, etc.</p>
+            <p class="card-text">
+                <ul>
+                  <li>Edad: 3 meses</li>
+                  <li>Fecha de nacimiento: 01/05/2020</li>
+                  <li>Teléfono: 86753099</li>
+                  <li>Última vez activo: 10/08/2020</li>
+              </ul>
+            </p>
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
               <a href="https://core.afinidata.com/instances/54309/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true">Reporte</a>
           </div>
@@ -104,7 +153,14 @@
               <i class='fas fa-user  float-right'  style='font-size:48px;color:purple'></i>
             <h5 class="card-title">Nombre del niño</h5>
             <h6 class="card-subtitle mb-2 text-muted">Nombre madre/padre</h6>
-            <p class="card-text">Información básica del niño como edad, número de teléfono, etc. </p>
+            <p class="card-text">
+                <ul>
+                  <li>Edad: 3 meses</li>
+                  <li>Fecha de nacimiento: 01/05/2020</li>
+                  <li>Teléfono: 86753099</li>
+                  <li>Última vez activo: 10/08/2020</li>
+              </ul>
+            </p>
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
               <a href="https://core.afinidata.com/instances/54309/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true">Reporte</a>
           </div>
@@ -116,7 +172,14 @@
               <i class='fas fa-baby  float-right'  style='font-size:48px;color:black'></i>
             <h5 class="card-title">Nombre del niño</h5>
             <h6 class="card-subtitle mb-2 text-muted">Nombre madre/padre</h6>
-            <p class="card-text">Información básica del niño como edad, número de teléfono, etc.</p>
+            <p class="card-text">
+                <ul>
+                  <li>Edad: 3 meses</li>
+                  <li>Fecha de nacimiento: 01/05/2020</li>
+                  <li>Teléfono: 86753099</li>
+                  <li>Última vez activo: 10/08/2020</li>
+              </ul>
+            </p>
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
               <a href="https://core.afinidata.com/instances/54309/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true">Reporte</a>
           </div>
@@ -128,7 +191,14 @@
               <i class='fas fa-user  float-right'  style='font-size:48px;color:pink'></i>
             <h5 class="card-title">Nombre del niño</h5>
             <h6 class="card-subtitle mb-2 text-muted">Nombre madre/padre</h6>
-            <p class="card-text">Información básica del niño como edad, número de teléfono, etc.</p>
+            <p class="card-text">
+                <ul>
+                  <li>Edad: 3 meses</li>
+                  <li>Fecha de nacimiento: 01/05/2020</li>
+                  <li>Teléfono: 86753099</li>
+                  <li>Última vez activo: 10/08/2020</li>
+              </ul>
+            </p>
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
               <a href="https://core.afinidata.com/instances/54309/report/" class="btn btn-primary" role="button" target="_blank"  aria-pressed="true">Reporte</a>
           </div>
@@ -144,7 +214,14 @@
               <i class='fas fa-baby  float-right'  style='font-size:48px;color:blue'></i>
             <h5 class="card-title">Nombre del niño</h5>
             <h6 class="card-subtitle mb-2 text-muted">Nombre madre/padre</h6>
-            <p class="card-text">Información básica del niño como edad, número de teléfono, etc. </p>
+            <p class="card-text">
+            <ul>
+                  <li>Edad: 3 meses</li>
+                  <li>Fecha de nacimiento: 01/05/2020</li>
+                  <li>Teléfono: 86753099</li>
+                  <li>Última vez activo: 10/08/2020</li>
+              </ul>
+              </p>
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
               <a href="https://core.afinidata.com/instances/54309/report/" class="btn btn-primary" role="button" target="_blank"  aria-pressed="true">Reporte</a>
           </div>
@@ -156,7 +233,14 @@
               <i class='fas fa-baby  float-right'  style='font-size:48px;color:green'></i>
             <h5 class="card-title">Nombre del niño</h5>
             <h6 class="card-subtitle mb-2 text-muted">Nombre madre/padre</h6>
-            <p class="card-text">Información básica del niño como edad, número de teléfono, etc.</p>
+            <p class="card-text">
+                <ul>
+                  <li>Edad: 3 meses</li>
+                  <li>Fecha de nacimiento: 01/05/2020</li>
+                  <li>Teléfono: 86753099</li>
+                  <li>Última vez activo: 10/08/2020</li>
+              </ul>
+            </p>
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
               <a href="https://core.afinidata.com/instances/54309/report/" class="btn btn-primary" role="button" target="_blank"  aria-pressed="true">Reporte</a>
           </div>
@@ -168,7 +252,14 @@
               <i class='fas fa-baby  float-right'  style='font-size:48px;color:red'></i>
             <h5 class="card-title">Nombre del niño</h5>
             <h6 class="card-subtitle mb-2 text-muted">Nombre madre/padre</h6>
-            <p class="card-text">Información básica del niño como edad, número de teléfono, etc.</p>
+            <p class="card-text">
+                <ul>
+                  <li>Edad: 3 meses</li>
+                  <li>Fecha de nacimiento: 01/05/2020</li>
+                  <li>Teléfono: 86753099</li>
+                  <li>Última vez activo: 10/08/2020</li>
+              </ul>
+            </p>
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
               <a href="https://core.afinidata.com/instances/54309/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true">Reporte</a>
           </div>
