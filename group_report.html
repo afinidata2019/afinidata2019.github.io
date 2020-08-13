@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+  <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -18,6 +19,10 @@
 .jumbotron, .col-lg {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+h3 {
+  text-align: center;
+  padding: 40px;
 }
 </style>
     <script>
@@ -38,6 +43,7 @@ var chart1 = new CanvasJS.Chart("chartContainer1", {
 		showInLegend: false,
 		legendMarkerColor: "grey",
 		legendText: "Respuestas",
+		includeZero: true,
 		dataPoints: [
 			{ y: 30, label: "Muy en desacuerdo" },
 			{ y: 26,  label: "En desacuerdo" },
@@ -60,6 +66,7 @@ var chart2 = new CanvasJS.Chart("chartContainer2", {
 		type: "bar",
 		showInLegend: false,
 		legendMarkerColor: "grey",
+		includeZero: true,
 		legendText: "Respuestas",
 		dataPoints: [
 			{ y: 10, label: "Muy en desacuerdo" },
@@ -83,6 +90,7 @@ var chart3 = new CanvasJS.Chart("chartContainer3", {
 		type: "bar",
 		showInLegend: false,
 		legendMarkerColor: "grey",
+		includeZero: true,
 		legendText: "Respuestas",
 		dataPoints: [
 			{ y: 3, label: "Muy en desacuerdo" },
@@ -92,10 +100,163 @@ var chart3 = new CanvasJS.Chart("chartContainer3", {
 		]
 	}]
 });
+
+var chart1A = new CanvasJS.Chart("chartContainer1A", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Usuarios activos",
+		fontSize: 15
+	},
+	axisY: {
+		title: "Cantidad de usuarios",
+		includeZero: true,
+	},
+	data: [{
+		type: "column",
+		showInLegend: false,
+		legendMarkerColor: "grey",
+		includeZero: true,
+		legendText: "Respuestas",
+		dataPoints: [
+			{ y: 200, label: "Registrados" },
+			{ y: 120,  label: "Activos última semana" },
+			{ y: 170,  label: "Activos último mes" },
+		]
+	}]
+});
+var chart2A = new CanvasJS.Chart("chartContainer2A", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Actividades",
+		fontSize: 15
+	},
+	axisY: {
+		title: "Cantidad de actividades",
+		includeZero: true,
+	},
+	data: [{
+		type: "column",
+		showInLegend: false,
+		legendMarkerColor: "grey",
+		legendText: "Respuestas",
+		includeZero: true,
+		dataPoints: [
+			{ y: 856, label: "Entregadas" },
+			{ y: 732,  label: "Abiertas" },
+			{ y: 124,  label: "No abiertas" }
+		]
+	}]
+});
+var chart1B = new CanvasJS.Chart("chartContainer1B", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Relación del encargado",
+		fontSize: 15
+	},
+	axisY: {
+		title: "Cantidad de usuarios"
+	},
+	data: [{
+		type: "bar",
+		showInLegend: false,
+		legendMarkerColor: "grey",
+		legendText: "Respuestas",
+		includeZero: true,
+		dataPoints: [
+			{ y: 30, label: "Mamá" },
+			{ y: 26,  label: "Papá" },
+			{ y: 17,  label: "Abuela/Abuelo" },
+			{ y: 16,  label: "Familiar" },
+			{ y: 16,  label: "Cuidador no familiar" },
+		]
+	}]
+});
+var chart2B = new CanvasJS.Chart("chartContainer2B", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Edad de encargad@",
+		fontSize: 15
+	},
+	axisY: {
+		title: "Cantidad de usuarios"
+	},
+	data: [{
+		type: "column",
+		showInLegend: true,
+		legendMarkerColor: "grey",
+		includeZero: true,
+		legendText: "Rangos de edades",
+		dataPoints: [
+			{ y: 15,  label: "Menos de 20" },
+			{ y: 10, label: "20-25" },
+			{ y: 50,  label: "25-30" },
+			{ y: 40,  label: "30-40" },
+			{ y: 15,  label: "Más de 40" },
+		]
+	}]
+});
+var chart3B = new CanvasJS.Chart("chartContainer3B", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Nivel de escolaridad del encargado",
+		fontSize: 15
+	},
+	axisY: {
+		title: "Cantidad de usuarios"
+	},
+	data: [{
+		type: "bar",
+		showInLegend: false,
+		legendMarkerColor: "grey",
+		includeZero: true,
+		legendText: "Respuestas",
+		dataPoints: [
+			{ y: 20, label: "No tiene" },
+			{ y: 50,  label: "Primaria" },
+			{ y: 70,  label: "Secundaria" },
+			{ y: 80,  label: "Ocupacional o técnica" },
+			{ y: 40,  label: "Universitario" },
+			{ y: 12,  label: "Postgrado" },
+		]
+	}]
+});
+var chart4B = new CanvasJS.Chart("chartContainer4B", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Niñ@s con discapacidad",
+		fontSize: 15
+	},
+	axisY: {
+		title: "Cantidad de usuarios"
+	},
+	data: [{
+		type: "column",
+		showInLegend: false,
+		legendMarkerColor: "grey",
+		includeZero: true,
+		legendText: "Respuestas",
+		dataPoints: [
+			{ y: 130, label: "No" },
+			{ y: 40,  label: "Reisgo en el desarrollo" },
+			{ y: 25,  label: "Discapacidad" },
+		]
+	}]
+});
 chart1.render();
 chart2.render();
 chart3.render();
-
+chart1A.render();
+chart2A.render();
+chart1B.render();
+chart2B.render();
+chart3B.render();
+chart4B.render();
 }
 </script>
 </head>
@@ -123,6 +284,63 @@ chart3.render();
   </div>
 </div>
 <div class="container">
+  <div class="row-center">
+    <h3>Actividad de usuarios</h3>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg">
+      <div id="chartContainer1A" style="height: 300px; width: 100%;"></div>
+    </div>
+    <div class="col-lg">
+      <div id="chartContainer2A" style="height: 300px; width: 100%"></div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row-center">
+    <h3>Datos demográficos</h3>
+  </div>
+</div>
+<br/><br/>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-7">
+      <div id="chartContainer1B" style="height: 300px; width: 100%;"></div>
+    </div>
+    <div class="col-lg-5">
+      <div id="chartContainer2B" style="height: 300px; width: 100%"></div>
+    </div>
+  </div>
+<br/>
+  <div class="row">
+    <div class="col-lg-7">
+      <div id="chartContainer3B" style="height: 300px; width: 100%"></div>
+    </div>
+    <div class="col-lg-5">
+      <div id="chartContainer4B" style="height: 300px; width: 100%"></div>
+    </div>
+  </div>
+</div>
+<br/><br/>
+<div class="container">
+  <div class="row-center">
+    <h3>Milestones alcanzados</h3>
+  </div>
+</div>
+<div class="container">
+  <div class="row-center" style="text-align: center;">
+    <img src="actividades.png" class="img-fluid" alt="Responsive image" style="width: 70%">
+  </div>
+</div>
+<br/><br/>
+<div class="container">
+  <div class="row-center">
+    <h3>Preguntas de Monitoreo</h3>
+  </div>
+</div>
+<div class="container">
   <div class="row">
     <div class="col-lg">
       <div id="chartContainer1" style="height: 300px; width: 100%;"></div>
@@ -133,15 +351,6 @@ chart3.render();
     <div class="col-lg">
       <div id="chartContainer3" style="height: 300px; width: 100%"></div>
     </div>
-  </div>
-</div><br/><br/>
-<div class="container">
-  <div class="row" >
-    <img src="actividades.png" class="img-fluid" alt="Responsive image">
-  </div>
-  <br/><br/>
-  <div class="row" >
-    <img src="trabajo.png" class="img-fluid" alt="Responsive image">
   </div>
 </div>
 <br/><br/>
