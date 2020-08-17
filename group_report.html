@@ -40,6 +40,8 @@ var chart1 = new CanvasJS.Chart("chartContainer1", {
 	},
 	data: [{
 		type: "pie",
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
 		showInLegend: false,
 		legendMarkerColor: "grey",
 		legendText: "Respuestas",
@@ -64,6 +66,8 @@ var chart2 = new CanvasJS.Chart("chartContainer2", {
 	},
 	data: [{
 		type: "pie",
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
 		showInLegend: false,
 		legendMarkerColor: "grey",
 		includeZero: true,
@@ -90,6 +94,8 @@ var chart3 = new CanvasJS.Chart("chartContainer3", {
 		type: "pie",
 		showInLegend: false,
 		legendMarkerColor: "grey",
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
 		includeZero: true,
 		legendText: "Respuestas",
 		dataPoints: [
@@ -114,6 +120,8 @@ var chart11 = new CanvasJS.Chart("chartContainer11", {
 		type: "pie",
 		showInLegend: false,
 		legendMarkerColor: "grey",
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
 		legendText: "Respuestas",
 		includeZero: true,
 		dataPoints: [
@@ -137,6 +145,8 @@ var chart21 = new CanvasJS.Chart("chartContainer21", {
 	data: [{
 		type: "pie",
 		showInLegend: false,
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
 		legendMarkerColor: "grey",
 		includeZero: true,
 		legendText: "Respuestas",
@@ -161,6 +171,8 @@ var chart31 = new CanvasJS.Chart("chartContainer31", {
 	data: [{
 		type: "pie",
 		showInLegend: false,
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
 		legendMarkerColor: "grey",
 		includeZero: true,
 		legendText: "Respuestas",
@@ -184,6 +196,8 @@ var chart12 = new CanvasJS.Chart("chartContainer12", {
 	},
 	data: [{
 		type: "pie",
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
 		showInLegend: false,
 		legendMarkerColor: "grey",
 		legendText: "Respuestas",
@@ -208,6 +222,8 @@ var chart22 = new CanvasJS.Chart("chartContainer22", {
 	},
 	data: [{
 		type: "pie",
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
 		showInLegend: false,
 		legendMarkerColor: "grey",
 		includeZero: true,
@@ -232,6 +248,8 @@ var chart32 = new CanvasJS.Chart("chartContainer32", {
 	},
 	data: [{
 		type: "pie",
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
 		showInLegend: false,
 		legendMarkerColor: "grey",
 		includeZero: true,
@@ -258,6 +276,8 @@ var chart1A = new CanvasJS.Chart("chartContainer1A", {
 	},
 	data: [{
 		type: "pie",
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
 		showInLegend: false,
 		legendMarkerColor: "grey",
 		includeZero: true,
@@ -282,6 +302,8 @@ var chart2A = new CanvasJS.Chart("chartContainer2A", {
 	},
 	data: [{
 		type: "pie",
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
 		showInLegend: false,
 		legendMarkerColor: "grey",
 		legendText: "Respuestas",
@@ -305,6 +327,8 @@ var chart1B = new CanvasJS.Chart("chartContainer1B", {
 	},
 	data: [{
 		type: "pie",
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
 		showInLegend: false,
 		legendMarkerColor: "grey",
 		legendText: "Respuestas",
@@ -330,7 +354,9 @@ var chart2B = new CanvasJS.Chart("chartContainer2B", {
 	},
 	data: [{
 		type: "pie",
-		showInLegend: true,
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label}, {y}",
+		showInLegend: false,
 		legendMarkerColor: "grey",
 		includeZero: true,
 		legendText: "Rangos de edades",
@@ -355,6 +381,8 @@ var chart3B = new CanvasJS.Chart("chartContainer3B", {
 	},
 	data: [{
 		type: "pie",
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
 		showInLegend: false,
 		legendMarkerColor: "grey",
 		includeZero: true,
@@ -381,6 +409,8 @@ var chart4B = new CanvasJS.Chart("chartContainer4B", {
 	},
 	data: [{
 		type: "pie",
+		yValueFormatString: "##0.00\"%\"",
+		indexLabel: "{label} {y}",
 		showInLegend: false,
 		legendMarkerColor: "grey",
 		includeZero: true,
@@ -401,8 +431,6 @@ chart31.render();
 chart12.render();
 chart22.render();
 chart32.render();
-chart1A.render();
-chart2A.render();
 chart1B.render();
 chart2B.render();
 chart3B.render();
@@ -439,12 +467,16 @@ chart4B.render();
   </div>
 </div>
 <div class="container">
-  <div class="row">
+  <div class="row" style="text-align: center;">
     <div class="col-lg">
-      <div id="chartContainer1A" style="height: 300px; width: 100%;"></div>
+      <h4>Usuarios Activos</h4>
+      <h1>130</h1>
+      <p>*El último mes</p>
     </div>
     <div class="col-lg">
-      <div id="chartContainer2A" style="height: 300px; width: 100%"></div>
+      <h4>Actividades entregadas</h4>
+      <h1>1,600</h1>
+      <p>*El último mes</p>
     </div>
   </div>
 </div>
@@ -456,20 +488,22 @@ chart4B.render();
 <br/><br/>
 <div class="container">
   <div class="row">
-    <div class="col-lg-7">
+    <div class="col-lg">
       <div id="chartContainer1B" style="height: 300px; width: 100%;"></div>
     </div>
-    <div class="col-lg-5">
+    <div class="col-lg">
       <div id="chartContainer2B" style="height: 300px; width: 100%"></div>
     </div>
   </div>
 <br/>
   <div class="row">
-    <div class="col-lg-7">
+    <div class="col-lg">
       <div id="chartContainer3B" style="height: 300px; width: 100%"></div>
     </div>
-    <div class="col-lg-5">
-      <div id="chartContainer4B" style="height: 300px; width: 100%"></div>
+    <div class="col-lg" style="text-align: center; vertical-align: middle;">
+      <br/><br/><br/><br/>
+      <h4>Niñ@s con alguna<br/> discapacidad</h4>
+      <h1>15</h1>
     </div>
   </div>
 </div>
