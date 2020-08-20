@@ -422,6 +422,37 @@ var chart4B = new CanvasJS.Chart("chartContainer4B", {
 		]
 	}]
 });
+var chart10 = new CanvasJS.Chart("chartContainer10", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Hitos de Etapa 1",
+		fontSize: 15
+	},
+	axisY: {
+		title: "Cantidad de usuarios",
+		includeZero: true,
+	},
+	data: [{
+		type: "bar",
+		indexLabel: "{percent}%",
+		toolTipContent: "{label}: {y}",
+		showInLegend: false,
+		legendMarkerColor: "grey",
+		legendText: "Respuestas",
+		includeZero: true,
+		dataPoints: [
+			{ y: 45, percent: 45, label: "Puede empuñar manos" },
+			{ y: 73, percent: 73, label: "Sostener su cabeza firme y recta" },
+			{ y: 85, percent: 85, label: "Juntar sus manos" },
+			{ y: 87, percent: 87, label: "Mantener la cabeza levantada" },
+            { y: 90, percent: 90, label: "Mantener la cabeza y el pecho levantados" },
+            { y: 95, percent: 95, label: "Agarrar un objeto pequeño" }
+		]
+	}]
+});
+
+chart10.render();
 chart1.render();
 chart2.render();
 chart3.render();
@@ -439,7 +470,7 @@ chart4B.render();
 </script>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <a class="navbar-brand" href="#">Afinidata</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -449,8 +480,18 @@ chart4B.render();
       <li class="nav-item active">
         <a class="nav-link" href="groupsViews.html">Grupo</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Reporte Grupal</a>
+      <li class="nav-item active">
+        <div class="container dropdown">
+            <a class="nav-link dropdown-toggle" href="#"  id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Reportes
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
+              <a class="dropdown-item" href="#">Uso plataforma</a>
+              <a class="dropdown-item" href="#report_demograficos">Datos demográficos</a>
+              <a class="dropdown-item" href="#report_hitos">Reporte de desarrollo</a>
+              <a class="dropdown-item" href="#report_monitoreo">Preguntas de monitoreo</a>
+            </div>
+        </div>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -470,6 +511,8 @@ chart4B.render();
     </form>
   </div>
 </nav>
+<br/>
+<br/>
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h2 class="display-4">Grupo #1</h2>
@@ -481,6 +524,7 @@ chart4B.render();
     <h3>Actividad de usuarios</h3>
   </div>
 </div>
+<br/>
 <div class="container">
   <div class="row" style="text-align: center;">
     <div class="col-lg">
@@ -492,19 +536,29 @@ chart4B.render();
       <h1>130</h1>
       <p>*Últimos 30 días</p>
     </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row" style="text-align: center;">
     <div class="col-lg">
       <h4>Actividades entregadas</h4>
       <h1>1,600</h1>
       <p>*Últimos 30 días</p>
     </div>
+    <div class="col-lg">
+      <h4>Sesiones entregadas</h4>
+      <h1>1,800</h1>
+      <p>*Últimos 30 días</p>
+    </div>
   </div>
-</div>
-<div class="container">
+</div><br/><br/>
+<br/><br/><br/><br/><br/>
+<div class="container" id="report_demograficos">
+<br/><br/>
   <div class="row-center">
     <h3>Datos demográficos</h3>
   </div>
 </div>
-<br/><br/>
 <div class="container">
   <div class="row">
     <div class="col-lg">
@@ -527,7 +581,28 @@ chart4B.render();
   </div>
 </div>
 <br/><br/>
+<div class="container" id="report_hitos">
+  <br/><br/>
+  <div class="row-center">
+    <h3>Reporte de desarrollo</h3>
+  </div>
+</div>
 <div class="container">
+  <div class="row-center" style="text-align: center;">
+    <img src="actividades.png" class="img-fluid" alt="Responsive image" style="width: 70%">
+  </div>
+</div>
+<br/><br/>
+<div class="container">
+  <div class="row">
+    <div class="col-lg">
+      <div id="chartContainer10" style="height: 300px; width: 100%;"></div>
+    </div>
+  </div>
+</div>
+<br/><br/>
+<div class="container" id="report_monitoreo">
+  <br/><br/>
   <div class="row-center">
     <h3>Preguntas de Monitoreo</h3>
   </div>
