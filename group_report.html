@@ -24,8 +24,30 @@ h3 {
   text-align: center;
   padding: 40px;
 }
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+}
 </style>
     <script>
+    $(document).ready(function(){
+	$(window).scroll(function () {
+			if ($(this).scrollTop() > 50) {
+				$('#back-to-top').fadeIn();
+			} else {
+				$('#back-to-top').fadeOut();
+			}
+		});
+		// scroll body to 0px on click
+		$('#back-to-top').click(function () {
+			$('body,html').animate({
+				scrollTop: 0
+			}, 400);
+			return false;
+		});
+});
 window.onload = function () {
 
 var chart1 = new CanvasJS.Chart("chartContainer1", {
@@ -477,8 +499,11 @@ chart4B.render();
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="groupsViews.html">Grupo</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="groupsViewsDetailed.html">Detalle</a>
       </li>
       <li class="nav-item active">
         <div class="container dropdown">
@@ -664,6 +689,9 @@ chart4B.render();
   </div>
 </div>
 <br/><br/>
+<a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 </html>

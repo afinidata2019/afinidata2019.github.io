@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bootstrap Card</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+.form-control-borderless {
+    border: none;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+.jumbotron, .col-lg {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+}
+</style>
+    <script>
+        $(document).ready(function(){
+	$(window).scroll(function () {
+			if ($(this).scrollTop() > 50) {
+				$('#back-to-top').fadeIn();
+			} else {
+				$('#back-to-top').fadeOut();
+			}
+		});
+		// scroll body to 0px on click
+		$('#back-to-top').click(function () {
+			$('body,html').animate({
+				scrollTop: 0
+			}, 400);
+			return false;
+		});
+});
+    </script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Afinidata</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="groupsViews.html">Grupo</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="groupsViewsDetailed.html">Detalle</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="group_report.html">Reportes</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+            <div class="container dropdown">
+                <a class="nav-link dropdown-toggle" href="#"  id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Filtrar
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                  <a class="dropdown-item" href="groupsViewsFiltered.html"><input type="checkbox" class="form-check-input" >  Riesgo en vacunación</a>
+                  <a class="dropdown-item" href="groupsViewsFiltered.html"><input type="checkbox" class="form-check-input" >  Prematuro</a>
+                  <a class="dropdown-item" href="groupsViewsFiltered.html"><input type="checkbox" class="form-check-input" >  Bajo peso</a>
+                </div>
+            </div>
+          </li>
+          <li class="nav-item active">
+            <div class="container dropdown">
+                <a class="nav-link dropdown-toggle" href="#"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Ordenar por
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Edad</a>
+                  <a class="dropdown-item" href="#">Más activo</a>
+                  <a class="dropdown-item" href="#">Mayor riesgo</a>
+                </div>
+            </div>
+          </li>
+            <li class="nav-item active">
+            <div class="container dropdown">
+                <a class="nav-link dropdown-toggle" href="#"  id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Buscar por
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                  <a class="dropdown-item" href="#">Nombre</a>
+                  <a class="dropdown-item" href="#">Edad</a>
+                </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+          </li>
+        </ul>
+    </form>
+  </div>
+</nav>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h2 class="display-4">Grupo #1</h2>
+    <p class="lead">Descripción del grupo</p>
+  </div>
+</div>
+<div class="container">
+  <div class="row" >
+    <div class="col-lg">
+      <div class="card" style="width: width:100%;">
+          <div class="card-body">
+              <i class='fas fa-user  float-right'  style='font-size:48px;color:orange'></i>
+            <h5 class="card-title">Estuardo</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Elías Santiago</h6>
+            <p class="card-text">
+                <ul>
+                  <li>Edad: 10 meses</li>
+                  <li>Fecha de nacimiento: 13/10/2019</li>
+                  <li>Teléfono: 86753099</li>
+                  <li>Última vez activo: 10/08/2020</li>
+              </ul>
+            </p>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
+              <a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true">Reporte</a>
+          </div>
+      </div>
+    </div>
+    <div class="col-lg">
+      <div class="card" style="width: width:100%;">
+          <div class="card-body">
+              <i class='fas fa-user  float-right'  style='font-size:48px;color:cyan'></i>
+            <h5 class="card-title">Alejandro</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Mónica Pérez</h6>
+            <p class="card-text">
+                <ul>
+                  <li>Edad: 9 meses</li>
+                  <li>Fecha de nacimiento: 20/11/2019</li>
+                  <li>Teléfono: 86753099</li>
+                  <li>Última vez activo: 10/08/2020</li>
+              </ul>
+            </p>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
+              <a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true">Reporte</a>
+          </div>
+      </div>
+    </div>
+      <div class="col-lg">
+      <div class="card" style="width: width:100%;">
+          <div class="card-body">
+              <i class='fas fa-baby  float-right'  style='font-size:48px;color:green'></i>
+            <h5 class="card-title">Pedro</h5>
+            <h6 class="card-subtitle mb-2 text-muted">José F.</h6>
+            <p class="card-text">
+                <ul>
+                  <li>Edad: 3 meses</li>
+                  <li>Fecha de nacimiento: 01/05/2020</li>
+                  <li>Teléfono: 86753099</li>
+                  <li>Última vez activo: 10/08/2020</li>
+              </ul>
+            </p>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
+              <a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true">Reporte</a>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row" >
+    <div class="col-lg">
+      <div class="card" style="width: width:100%;">
+          <div class="card-body">
+              <i class='fas fa-user  float-right'  style='font-size:48px;color:purple'></i>
+            <h5 class="card-title">María</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Andrea H.</h6>
+            <p class="card-text">
+                <ul>
+                  <li>Edad: 18 meses</li>
+                  <li>Fecha de nacimiento: 25/02/2019</li>
+                  <li>Teléfono: 86753099</li>
+                  <li>Última vez activo: 10/08/2020</li>
+              </ul>
+            </p>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
+              <a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true">Reporte</a>
+          </div>
+      </div>
+    </div>
+    <div class="col-lg">
+      <div class="card" style="width: width:100%;">
+          <div class="card-body">
+              <i class='fas fa-baby  float-right'  style='font-size:48px;color:black'></i>
+            <h5 class="card-title">Clara</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Lucía Torres</h6>
+            <p class="card-text">
+                <ul>
+                  <li>Edad: 4 meses</li>
+                  <li>Fecha de nacimiento: 09/04/2020</li>
+                  <li>Teléfono: 86753099</li>
+                  <li>Última vez activo: 10/08/2020</li>
+              </ul>
+            </p>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
+              <a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true">Reporte</a>
+          </div>
+      </div>
+    </div>
+      <div class="col-lg">
+      <div class="card" style="width: width:100%;">
+          <div class="card-body">
+              <i class='fas fa-user  float-right'  style='font-size:48px;color:pink'></i>
+            <h5 class="card-title">Héctor</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Laura Flores</h6>
+            <p class="card-text">
+                <ul>
+                  <li>Edad: 17 meses</li>
+                  <li>Fecha de nacimiento: 23/03/2019</li>
+                  <li>Teléfono: 86753099</li>
+                  <li>Última vez activo: 10/08/2020</li>
+              </ul>
+            </p>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
+              <a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank"  aria-pressed="true">Reporte</a>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row" >
+    <div class="col-lg">
+      <div class="card" style="width: width:100%;">
+          <div class="card-body">
+              <i class='fas fa-baby  float-right'  style='font-size:48px;color:blue'></i>
+            <h5 class="card-title">Inés</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Gustavo A. D.</h6>
+            <p class="card-text">
+            <ul>
+                  <li>Edad: 3 meses</li>
+                  <li>Fecha de nacimiento: 06/05/2020</li>
+                  <li>Teléfono: 86753099</li>
+                  <li>Última vez activo: 10/08/2020</li>
+              </ul>
+              </p>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
+              <a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank"  aria-pressed="true">Reporte</a>
+          </div>
+      </div>
+    </div>
+    <div class="col-lg">
+      <div class="card" style="width: width:100%;">
+          <div class="card-body">
+              <i class='fas fa-baby  float-right'  style='font-size:48px;color:green'></i>
+            <h5 class="card-title">Lisbeth</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Dulce María R.</h6>
+            <p class="card-text">
+                <ul>
+                  <li>Edad: 5 meses</li>
+                  <li>Fecha de nacimiento: 11/03/2020</li>
+                  <li>Teléfono: 86753099</li>
+                  <li>Última vez activo: 10/08/2020</li>
+              </ul>
+            </p>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
+              <a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank"  aria-pressed="true">Reporte</a>
+          </div>
+      </div>
+    </div>
+      <div class="col-lg">
+      <div class="card" style="width: width:100%;">
+          <div class="card-body">
+              <i class='fas fa-baby  float-right'  style='font-size:48px;color:red'></i>
+            <h5 class="card-title">Rodrigo</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Fernando Reyes</h6>
+            <p class="card-text">
+                <ul>
+                  <li>Edad: 2 meses</li>
+                  <li>Fecha de nacimiento: 06/06/2020</li>
+                  <li>Teléfono: 86753099</li>
+                  <li>Última vez activo: 18/08/2020</li>
+              </ul>
+            </p>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
+              <a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true">Reporte</a>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br/>
+<br/>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Datos demográficos</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+        <h5 class="modal-title" style="padding: 10px;">Datos del niño:</h5>
+          <div class="row" >
+              <ul>
+                  <li>Fue prematuro:
+                        <span class="badge badge-pill badge-success">No fue prematuro</span>
+                  </li>
+                  <li>Aprendizaje:
+                      <span class="badge badge-pill badge-danger">Tiene problemas de aprendizaje</span>
+                  </li>
+                  <li>Discapacidad o riesgo:
+                    <span class="badge badge-pill badge-warning">Tiene discapacidad</span>
+                  </li>
+              </ul>
+            </div>
+        <h5 class="modal-title" style="padding: 10px;">Datos del encargado:</h5>
+          <div class="row">
+              <ul>
+                  <li>Relación con el niño:
+                        <span class="badge badge-pill badge-success">Mamá</span>
+                  </li>
+                  <li>Educación:
+                      <span class="badge badge-pill badge-danger">No asistió a la escuela</span>
+                  </li>
+                  <li>Edad:
+                     <span class="badge badge-pill badge-success">De 30 a 40</span>
+                  </li>
+                  <li>Cuenta con apoyo:
+                     <span class="badge badge-pill badge-success">Si cuenta con el apoyo de su pareja</span>
+                  </li>
+              </ul>
+            </div>
+            <h5 class="modal-title" style="padding: 10px;">Seguimiento:</h5>
+            <div class="row" style="width:100%; padding-left:40px;">
+                <select class="form-control">
+                  <option>Sin seguimiento</option>
+                  <option>Por llamar</option>
+                  <option>Ya se contactó</option>
+                </select>
+            </div>
+            <h5 class="modal-title" style="padding: 10px;">Observaciones:</h5>
+            <div class="row" style="width:100%; padding-left:40px;">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="2">Ya se le pusieron las vacunas del primer mes.</textarea>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Regresar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>
+</body>
+</html>
