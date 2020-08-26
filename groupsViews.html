@@ -60,18 +60,18 @@ var chart10 = new CanvasJS.Chart("chartContainer10", {
 	animationEnabled: true,
 	theme: "light2", // "light1", "light2", "dark1", "dark2"
 	title:{
-		text: "Factores de riesgo",
+		text: "Cantidad de niños por riesgos",
 		fontSize: 25
 	},
 	axisY: {
-		title: "Cantidad de usuarios",
+		title: "Cantidad de niños",
 		fontSize: 10,
 		includeZero: true,
 	},
 	data: [{
 		type: "bar",
 		click: filterInstances,
-		indexLabel: "{percent}%",
+		indexLabel: "{y}",
 		toolTipContent: "{label}: {y}",
 		showInLegend: false,
 		legendMarkerColor: "grey",
@@ -79,12 +79,15 @@ var chart10 = new CanvasJS.Chart("chartContainer10", {
 		includeZero: true,
 		cursor: "pointer",
 		dataPoints: [
-			{ y: 40, percent: 40, label: "Papás adolescentes" },
+			{ y: 25, percent: 20, label: "No lactancia" },
+			{ y: 20, percent: 20, label: "Riesgo cuidador, salud mental" },
+			{ y: 40, percent: 20, label: "Padres adolescentes" },
 			{ y: 15, percent: 15, label: "Nació con bajo peso" },
 			{ y: 10, percent: 10, label: "Fue prematuro" },
+			{ y: 40, percent: 40, label: "No ha visitado centro de salud" },
 			{ y: 15, percent: 15, label: "Tiene alguna discapacidad" },
-			{ y: 20, percent: 20, label: "Tiene problemas de desarrollo" },
-            { y: 50, percent: 50, label: "No ha tomado suplementación" },
+			{ y: 20, percent: 20, label: "Riesgos en desarrollo" },
+            { y: 50, percent: 50, label: "Anemia diagnosticada" },
             { y: 30, percent: 30, label: "No tiene vacunación" }
 		]
 	}]
@@ -129,11 +132,31 @@ function filterInstancesRiesgo() {
 </nav>
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h2 class="display-4">Grupo #1</h2>
-    <p class="lead">Descripción del grupo</p>
+    <h2 class="display-4">Lima norte #1</h2>
+    <p class="lead">Centro de salud Lima norte, Atendido por Palmira Hernández</p>
   </div>
 </div>
 <div class="container">
+
+<br/>
+    <div class="container">
+  <div class="row" style="text-align: center;">
+    <div class="col-lg">
+      <h4>Niños atendidos por Afinidata</h4>
+      <h1>2,100</h1>
+    </div>
+    <div class="col-lg">
+      <h4>Niños que requieren seguimiento</h4>
+      <h1>86</h1>
+    </div>
+  </div>
+</div>
+<br/>
+  <div class="row">
+    <div class="col-lg">
+      <div id="chartContainer10" style="height: 400px; width: 100%;"></div>
+    </div>
+  </div>
     <div class="row">
     <div class="col-lg">
       <div>Haz click en una barra para filtrar o
@@ -141,15 +164,11 @@ function filterInstancesRiesgo() {
       </div>
     </div>
   </div>
-<br/>
-  <div class="row">
-    <div class="col-lg">
-      <div id="chartContainer10" style="height: 400px; width: 100%;"></div>
-    </div>
-  </div>
 </div>
+
 <div class="container" id="detalle_instancias">
     <br/><br/>
+
     <div class="container">
       <div class="row-center" style="width:100%; text-align:center;">
         <div class="col-lg">
@@ -158,233 +177,124 @@ function filterInstancesRiesgo() {
       </div>
     </div>
     <div class="container">
-      <div class="row" >
-        <div class="col-lg">
-          <div class="card" style="width: width:100%;">
-              <div class="card-body">
-                <h5 class="card-title">Estuardo</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Elías Santiago</h6>
-                <p class="card-text">
-                    <ul>
-                      <li>Edad: 10 meses</li>
-                      <li>Fecha de nacimiento: 13/10/2019</li>
-                      <li>Teléfono: 86753099</li>
-                      <li>Última vez activo: 10/08/2020</li>
-                  </ul>
-                </p>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
-                  <a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true">Reporte</a>
-              </div>
-          </div>
-        </div>
-          <div class="col-lg">
-          <div class="card" style="width: width:100%;">
-              <div class="card-body">
-                <h5 class="card-title">Pedro</h5>
-                <h6 class="card-subtitle mb-2 text-muted">José F.</h6>
-                <p class="card-text">
-                    <ul>
-                      <li>Edad: 3 meses</li>
-                      <li>Fecha de nacimiento: 01/05/2020</li>
-                      <li>Teléfono: 86753099</li>
-                      <li>Última vez activo: 10/08/2020</li>
-                  </ul>
-                </p>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
-                  <a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true">Reporte</a>
-              </div>
-          </div>
-        </div>
-        <div class="col-lg">
-          <div class="card" style="width: width:100%;">
-              <div class="card-body">
-                <h5 class="card-title">Alejandro</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Mónica Pérez</h6>
-                <p class="card-text">
-                    <ul>
-                      <li>Edad: 9 meses</li>
-                      <li>Fecha de nacimiento: 20/11/2019</li>
-                      <li>Teléfono: 86753099</li>
-                      <li>Última vez activo: 10/08/2020</li>
-                  </ul>
-                </p>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
-                  <a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true">Reporte</a>
-              </div>
-          </div>
-        </div>
-          <div class="col-lg">
-          <div class="card" style="width: width:100%;">
-              <div class="card-body">
-                <h5 class="card-title">Pedro</h5>
-                <h6 class="card-subtitle mb-2 text-muted">José F.</h6>
-                <p class="card-text">
-                    <ul>
-                      <li>Edad: 3 meses</li>
-                      <li>Fecha de nacimiento: 01/05/2020</li>
-                      <li>Teléfono: 86753099</li>
-                      <li>Última vez activo: 10/08/2020</li>
-                  </ul>
-                </p>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
-                  <a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true">Reporte</a>
-              </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row" >
-        <div class="col-lg">
-          <div class="card" style="width: width:100%;">
-              <div class="card-body">
-                <h5 class="card-title">María</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Andrea H.</h6>
-                <p class="card-text">
-                    <ul>
-                      <li>Edad: 18 meses</li>
-                      <li>Fecha de nacimiento: 25/02/2019</li>
-                      <li>Teléfono: 86753099</li>
-                      <li>Última vez activo: 10/08/2020</li>
-                  </ul>
-                </p>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
-                  <a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true">Reporte</a>
-              </div>
-          </div>
-        </div>
-        <div class="col-lg">
-          <div class="card" style="width: width:100%;">
-              <div class="card-body">
-                <h5 class="card-title">Clara</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Lucía Torres</h6>
-                <p class="card-text">
-                    <ul>
-                      <li>Edad: 4 meses</li>
-                      <li>Fecha de nacimiento: 09/04/2020</li>
-                      <li>Teléfono: 86753099</li>
-                      <li>Última vez activo: 10/08/2020</li>
-                  </ul>
-                </p>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
-                  <a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true">Reporte</a>
-              </div>
-          </div>
-        </div>
-          <div class="col-lg">
-          <div class="card" style="width: width:100%;">
-              <div class="card-body">
-                <h5 class="card-title">Rodrigo</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Fernando Reyes</h6>
-                <p class="card-text">
-                    <ul>
-                      <li>Edad: 2 meses</li>
-                      <li>Fecha de nacimiento: 06/06/2020</li>
-                      <li>Teléfono: 86753099</li>
-                      <li>Última vez activo: 18/08/2020</li>
-                  </ul>
-                </p>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
-                  <a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true">Reporte</a>
-              </div>
-          </div>
-        </div>
-          <div class="col-lg">
-          <div class="card" style="width: width:100%;">
-              <div class="card-body">
-                <h5 class="card-title">Héctor</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Laura Flores</h6>
-                <p class="card-text">
-                    <ul>
-                      <li>Edad: 17 meses</li>
-                      <li>Fecha de nacimiento: 23/03/2019</li>
-                      <li>Teléfono: 86753099</li>
-                      <li>Última vez activo: 10/08/2020</li>
-                  </ul>
-                </p>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
-                  <a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank"  aria-pressed="true">Reporte</a>
-              </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row" >
-        <div class="col-lg">
-          <div class="card" style="width: width:100%;">
-              <div class="card-body">
-                <h5 class="card-title">Inés</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Gustavo A. D.</h6>
-                <p class="card-text">
-                <ul>
-                      <li>Edad: 3 meses</li>
-                      <li>Fecha de nacimiento: 06/05/2020</li>
-                      <li>Teléfono: 86753099</li>
-                      <li>Última vez activo: 10/08/2020</li>
-                  </ul>
-                  </p>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
-                  <a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank"  aria-pressed="true">Reporte</a>
-              </div>
-          </div>
-        </div>
-        <div class="col-lg">
-          <div class="card" style="width: width:100%;">
-              <div class="card-body">
-                <h5 class="card-title">Lisbeth</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Dulce María R.</h6>
-                <p class="card-text">
-                    <ul>
-                      <li>Edad: 5 meses</li>
-                      <li>Fecha de nacimiento: 11/03/2020</li>
-                      <li>Teléfono: 86753099</li>
-                      <li>Última vez activo: 10/08/2020</li>
-                  </ul>
-                </p>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
-                  <a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank"  aria-pressed="true">Reporte</a>
-              </div>
-          </div>
-        </div>
-          <div class="col-lg">
-          <div class="card" style="width: width:100%;">
-              <div class="card-body">
-                <h5 class="card-title">Rodrigo</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Fernando Reyes</h6>
-                <p class="card-text">
-                    <ul>
-                      <li>Edad: 2 meses</li>
-                      <li>Fecha de nacimiento: 06/06/2020</li>
-                      <li>Teléfono: 86753099</li>
-                      <li>Última vez activo: 18/08/2020</li>
-                  </ul>
-                </p>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
-                  <a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true">Reporte</a>
-              </div>
-          </div>
-        </div>
-          <div class="col-lg">
-          <div class="card" style="width: width:100%;">
-              <div class="card-body">
-                <h5 class="card-title">Rodrigo</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Fernando Reyes</h6>
-                <p class="card-text">
-                    <ul>
-                      <li>Edad: 2 meses</li>
-                      <li>Fecha de nacimiento: 06/06/2020</li>
-                      <li>Teléfono: 86753099</li>
-                      <li>Última vez activo: 18/08/2020</li>
-                  </ul>
-                </p>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Info</button>
-                  <a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true">Reporte</a>
-              </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="row">
+        <table class="table">
+          <thead>
+            <tr>
+                <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Encargado</th>
+              <th scope="col">Edad</th>
+              <th scope="col">Nacimiento</th>
+              <th scope="col">Teléfono</th>
+              <th scope="col">Última vez activo</th>
+              <th scope="col">Riesgo</th>
+              <th scope="col">Info.</th>
+              <th scope="col">Reporte</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <th>Estuardo</th>
+              <td>Elías Santiago</td>
+              <td>10 meses</td>
+              <td>13/10/2019</td>
+              <td>86753099</td>
+              <td>10/08/2020</td>
+              <td><span class="badge badge-pill badge-danger">Alto</span></td>
+              <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
+              <td><a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <th>Pedro</th>
+              <td>José F.</td>
+              <td>3 meses</td>
+              <td>01/05/2019</td>
+              <td>86755607</td>
+              <td>20/08/2020</td>
+              <td><span class="badge badge-pill badge-danger">Alto</span></td>
+              <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
+              <td><a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <th>Alejandro</th>
+              <td>Mónica Pérez</td>
+              <td>9 meses</td>
+              <td>20/11/2019</td>
+              <td>45892099</td>
+              <td>18/08/2020</td>
+              <td><span class="badge badge-pill badge-danger">Alto</span></td>
+              <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
+              <td><a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <th>María</th>
+              <td>Andrea H.</td>
+              <td>18 meses</td>
+              <td>25/02/2019</td>
+              <td>37743198</td>
+              <td>11/07/2020</td>
+              <td><span class="badge badge-pill badge-danger">Alto</span></td>
+              <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
+              <td><a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <th>Clara</th>
+              <td>Lucía Torres</td>
+              <td>4 meses</td>
+              <td>09/04/2019</td>
+              <td>85792455</td>
+              <td>10/08/2020</td>
+              <td><span class="badge badge-pill badge-danger">Alto</span></td>
+              <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
+              <td><a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
+            </tr>
+            <tr>
+              <th scope="row">6</th>
+              <th>Rodrigo</th>
+              <td>Fernando Reyes</td>
+              <td>2 meses</td>
+              <td>06/06/2019</td>
+              <td>59486861</td>
+              <td>10/08/2020</td>
+              <td><span class="badge badge-pill badge-warning">Medio</span></td>
+              <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
+              <td><a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
+            </tr>
+            <tr>
+              <th scope="row">7</th>
+              <th>Héctor</th>
+              <td>Laura Flores</td>
+              <td>17 meses</td>
+              <td>23/03/2019</td>
+              <td>86753099</td>
+              <td>10/08/2020</td>
+              <td><span class="badge badge-pill badge-warning">Medio</span></td>
+              <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
+              <td><a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
+            </tr>
+            <tr>
+              <th scope="row">8</th>
+              <th>Inés</th>
+              <td>Gustavo A. D.</td>
+              <td>10 meses</td>
+              <td>13/10/2019</td>
+              <td>86753099</td>
+              <td>10/08/2020</td>
+              <td><span class="badge badge-pill badge-success">Bajo</span></td>
+              <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
+              <td><a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+</div>
+
 </div>
 <br/>
 <!-- Modal -->
@@ -402,6 +312,15 @@ function filterInstancesRiesgo() {
         <h5 class="modal-title" style="padding: 10px;">Datos del niño:</h5>
           <div class="row" >
               <ul>
+                  <li>Anemia:
+                    <span class="badge badge-pill badge-success">No diagnosticado</span>
+                  </li>
+                  <li>Lactancia:
+                    <span class="badge badge-pill badge-warning">Le da suplementos</span>
+                  </li>
+                  <li>Vacunación:
+                    <span class="badge badge-pill badge-danger">No se ha vacunado</span>
+                  </li>
                   <li>Fue prematuro:
                         <span class="badge badge-pill badge-success">No fue prematuro</span>
                   </li>
@@ -435,6 +354,7 @@ function filterInstancesRiesgo() {
                 <select class="form-control">
                   <option>Sin seguimiento</option>
                   <option>Por llamar</option>
+                  <option>Se intentó contactar</option>
                   <option>Ya se contactó</option>
                 </select>
             </div>
