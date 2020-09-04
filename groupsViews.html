@@ -36,6 +36,9 @@
     right: 25px;
     display: none;
 }
+.badge{
+  cursor: pointer;
+}
 </style>
 <script>
 $(document).ready(function(){
@@ -92,6 +95,30 @@ var chart10 = new CanvasJS.Chart("chartContainer10", {
 		]
 	}]
 });
+
+$("#anemia_2").hide();
+$('[id^="anemia_"]').click(function() {
+  $( "#anemia_1" ).toggle();
+  $( "#anemia_2" ).toggle();
+});
+
+$("#prematuro_2").hide();
+$('[id^="prematuro_"]').click(function() {
+  $( "#prematuro_1" ).toggle();
+  $( "#prematuro_2" ).toggle();
+});
+
+$("#vacunacion_2").hide();
+$('[id^="vacunacion_"]').click(function() {
+  $( "#vacunacion_1" ).toggle();
+  $( "#vacunacion_2" ).toggle();
+});
+
+$("#lactancia_2").hide();
+$("#lactancia_3").hide();
+$('#lactancia_1').click(function() {$( "#lactancia_1" ).toggle(); $( "#lactancia_2" ).toggle();});
+$('#lactancia_2').click(function() {$( "#lactancia_2" ).toggle(); $( "#lactancia_3" ).toggle();});
+$('#lactancia_3').click(function() {$( "#lactancia_3" ).toggle(); $( "#lactancia_1" ).toggle();});
 
 chart10.render();
 document.getElementById("chartContainer10").style.cursor = "pointer";
@@ -187,7 +214,7 @@ function filterInstancesRiesgo() {
               <th scope="col">Edad</th>
               <th scope="col">Nacimiento</th>
               <th scope="col">Teléfono</th>
-              <th scope="col">Última vez activo</th>
+              <th scope="col">Dirección</th>
               <th scope="col">Riesgo</th>
               <th scope="col">Info.</th>
               <th scope="col">Reporte</th>
@@ -201,7 +228,7 @@ function filterInstancesRiesgo() {
               <td>10 meses</td>
               <td>13/10/2019</td>
               <td>86753099</td>
-              <td>10/08/2020</td>
+              <td>Colonia las Lagunas, 2da av, calle 3</td>
               <td><span class="badge badge-pill badge-danger">Alto</span></td>
               <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
               <td><a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
@@ -213,7 +240,7 @@ function filterInstancesRiesgo() {
               <td>3 meses</td>
               <td>01/05/2019</td>
               <td>86755607</td>
-              <td>20/08/2020</td>
+              <td>Colonia Primero de Jilio, cuarta calle en la casa con portón negro</td>
               <td><span class="badge badge-pill badge-danger">Alto</span></td>
               <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
               <td><a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
@@ -225,7 +252,7 @@ function filterInstancesRiesgo() {
               <td>9 meses</td>
               <td>20/11/2019</td>
               <td>45892099</td>
-              <td>18/08/2020</td>
+              <td>Santa María, quinta avenida, casa 10</td>
               <td><span class="badge badge-pill badge-danger">Alto</span></td>
               <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
               <td><a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
@@ -237,7 +264,7 @@ function filterInstancesRiesgo() {
               <td>18 meses</td>
               <td>25/02/2019</td>
               <td>37743198</td>
-              <td>11/07/2020</td>
+              <td>Lima, Lima Norte, Colonia Las Amapolas, 3ra avenida calle 7</td>
               <td><span class="badge badge-pill badge-danger">Alto</span></td>
               <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
               <td><a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
@@ -249,7 +276,7 @@ function filterInstancesRiesgo() {
               <td>4 meses</td>
               <td>09/04/2019</td>
               <td>85792455</td>
-              <td>10/08/2020</td>
+              <td>Enfrente del centro de salud de lima norte</td>
               <td><span class="badge badge-pill badge-danger">Alto</span></td>
               <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
               <td><a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
@@ -261,7 +288,7 @@ function filterInstancesRiesgo() {
               <td>2 meses</td>
               <td>06/06/2019</td>
               <td>59486861</td>
-              <td>10/08/2020</td>
+              <td>Yo vivo cerca del parque, enfrente de la municipalidad</td>
               <td><span class="badge badge-pill badge-warning">Medio</span></td>
               <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
               <td><a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
@@ -273,7 +300,7 @@ function filterInstancesRiesgo() {
               <td>17 meses</td>
               <td>23/03/2019</td>
               <td>86753099</td>
-              <td>10/08/2020</td>
+              <td>San Miguel Petapa, Los Eucaliptos</td>
               <td><span class="badge badge-pill badge-warning">Medio</span></td>
               <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
               <td><a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
@@ -285,7 +312,7 @@ function filterInstancesRiesgo() {
               <td>10 meses</td>
               <td>13/10/2019</td>
               <td>86753099</td>
-              <td>10/08/2020</td>
+              <td>Para que la quiere?</td>
               <td><span class="badge badge-pill badge-success">Bajo</span></td>
               <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
               <td><a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
@@ -311,18 +338,24 @@ function filterInstancesRiesgo() {
         <div class="container">
         <h5 class="modal-title" style="padding: 10px;">Datos del niño:</h5>
           <div class="row" >
-              <ul>
+
+              <ul><i>Has click para editar:</i>
                   <li>Anemia:
-                    <span class="badge badge-pill badge-success">No diagnosticado</span>
+                    <span class="badge badge-pill badge-success" id="anemia_1">No diagnosticado</span>
+                    <span class="badge badge-pill badge-danger" id="anemia_2">Si tiene</span>
                   </li>
                   <li>Lactancia:
-                    <span class="badge badge-pill badge-warning">Le da suplementos</span>
+                    <span class="badge badge-pill badge-warning" id="lactancia_1">Le da suplementos</span>
+                    <span class="badge badge-pill badge-success" id="lactancia_2">La mamá le da de lactar</span>
+                    <span class="badge badge-pill badge-danger" id="lactancia_3">No se la da nada</span>
                   </li>
                   <li>Vacunación:
-                    <span class="badge badge-pill badge-danger">No se ha vacunado</span>
+                    <span class="badge badge-pill badge-danger" id="vacunacion_1">No se ha vacunado</span>
+                    <span class="badge badge-pill badge-success" id="vacunacion_2">Ya se vacunó</span>
                   </li>
                   <li>Fue prematuro:
-                        <span class="badge badge-pill badge-success">No fue prematuro</span>
+                        <span class="badge badge-pill badge-success" id="prematuro_1">No fue prematuro</span>
+                        <span class="badge badge-pill badge-warning" id="prematuro_2">Fue prematuro</span>
                   </li>
                   <li>Aprendizaje:
                       <span class="badge badge-pill badge-danger">Tiene problemas de aprendizaje</span>
