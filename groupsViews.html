@@ -83,15 +83,71 @@ var chart10 = new CanvasJS.Chart("chartContainer10", {
 		cursor: "pointer",
 		dataPoints: [
 			{ y: 25, percent: 20, label: "No lactancia" },
-			{ y: 20, percent: 20, label: "Riesgo cuidador, salud mental" },
-			{ y: 40, percent: 20, label: "Padres adolescentes" },
-			{ y: 15, percent: 15, label: "Nació con bajo peso" },
-			{ y: 10, percent: 10, label: "Fue prematuro" },
 			{ y: 40, percent: 40, label: "No ha visitado centro de salud" },
 			{ y: 15, percent: 15, label: "Tiene alguna discapacidad" },
 			{ y: 20, percent: 20, label: "Riesgos en desarrollo" },
             { y: 50, percent: 50, label: "Anemia diagnosticada" },
             { y: 30, percent: 30, label: "No tiene vacunación" }
+		]
+	}]
+});
+var chart11 = new CanvasJS.Chart("chartContainer11", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Cantidad de niños con riesgos",
+		fontSize: 25
+	},
+	axisY: {
+		title: "Cantidad de niños",
+		fontSize: 10,
+		includeZero: true,
+	},
+	data: [{
+		type: "pie",
+		indexLabel: "{y}",
+		toolTipContent: "{label} con riesgos: {y}",
+		showInLegend: false,
+		indexLabel: "{label}: {y}",
+		legendMarkerColor: "grey",
+		includeZero: true,
+		indexLabelPlacement: "inside",
+		indexLabelFontSize: 20,
+		indexLabelFontColor: "#FFFFFF",
+		cursor: "pointer",
+		dataPoints: [
+			{ y: 25, percent: 45, label: "Niños" },
+			{ y: 20, percent: 55, label: "Niñas" }
+		]
+	}]
+});
+var chart12 = new CanvasJS.Chart("chartContainer12", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Cantidad de niños sin riesgos",
+		fontSize: 25
+	},
+	axisY: {
+		title: "Cantidad de niños",
+		fontSize: 10,
+		includeZero: true,
+	},
+	data: [{
+		type: "pie",
+		indexLabel: "{y}",
+		indexLabelPlacement: "inside",
+		indexLabelFontSize: 20,
+		indexLabelFontColor: "#FFFFFF",
+		toolTipContent: "{label} sin riesgos: {y}",
+		indexLabel: "{label}: {y}",
+		showInLegend: false,
+		legendMarkerColor: "grey",
+		includeZero: true,
+		cursor: "pointer",
+		dataPoints: [
+			{ y: 976, percent: 45, label: "Niños" },
+			{ y: 985, percent: 55, label: "Niñas" }
 		]
 	}]
 });
@@ -121,6 +177,8 @@ $('#lactancia_2').click(function() {$( "#lactancia_2" ).toggle(); $( "#lactancia
 $('#lactancia_3').click(function() {$( "#lactancia_3" ).toggle(); $( "#lactancia_1" ).toggle();});
 
 chart10.render();
+chart11.render();
+chart12.render();
 document.getElementById("chartContainer10").style.cursor = "pointer";
 $("#detalle_instancias").hide();
 function filterInstances(e) {
@@ -166,6 +224,14 @@ function filterInstancesRiesgo() {
 <div class="container">
 
 <br/>
+  <div class="row">
+    <div class="col-lg">
+      <div id="chartContainer11" style="height: 400px; width: 100%;"></div>
+    </div>
+    <div class="col-lg">
+      <div id="chartContainer12" style="height: 400px; width: 100%;"></div>
+    </div>
+  </div>
     <div class="container">
   <div class="row" style="text-align: center;">
     <div class="col-lg">
@@ -289,7 +355,7 @@ function filterInstancesRiesgo() {
               <td>06/06/2019</td>
               <td>59486861</td>
               <td>Yo vivo cerca del parque, enfrente de la municipalidad</td>
-              <td><span class="badge badge-pill badge-warning">Medio</span></td>
+              <td><span class="badge badge-pill badge-success">Bajo</span></td>
               <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
               <td><a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
             </tr>
@@ -301,7 +367,7 @@ function filterInstancesRiesgo() {
               <td>23/03/2019</td>
               <td>86753099</td>
               <td>San Miguel Petapa, Los Eucaliptos</td>
-              <td><span class="badge badge-pill badge-warning">Medio</span></td>
+              <td><span class="badge badge-pill badge-success">Bajo</span></td>
               <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
               <td><a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
             </tr>
@@ -329,29 +395,18 @@ function filterInstancesRiesgo() {
   <div class="modal-dialog modal-dialog-centered modal-xl" role="dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Datos demográficos</h5>
+        <h5 class="modal-title" id="exampleModalCenterTitle">María Perez</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <div class="container">
-        <h5 class="modal-title" style="padding: 10px;">Datos del niño:</h5>
+        <h5 class="modal-title" style="padding: 10px;">Factores de riesgo:</h5>
           <div class="row" >
-
-              <ul><i>Has click para editar:</i>
-                  <li>Anemia:
-                    <span class="badge badge-pill badge-success" id="anemia_1">No diagnosticado</span>
-                    <span class="badge badge-pill badge-danger" id="anemia_2">Si tiene</span>
-                  </li>
-                  <li>Lactancia:
-                    <span class="badge badge-pill badge-warning" id="lactancia_1">Le da suplementos</span>
-                    <span class="badge badge-pill badge-success" id="lactancia_2">La mamá le da de lactar</span>
-                    <span class="badge badge-pill badge-danger" id="lactancia_3">No se la da nada</span>
-                  </li>
-                  <li>Vacunación:
-                    <span class="badge badge-pill badge-danger" id="vacunacion_1">No se ha vacunado</span>
-                    <span class="badge badge-pill badge-success" id="vacunacion_2">Ya se vacunó</span>
+              <ul>
+                  <li>Nacimiento con bajo peso:
+                    <span class="badge badge-pill badge-warning">Bajo peso</span>
                   </li>
                   <li>Fue prematuro:
                         <span class="badge badge-pill badge-success" id="prematuro_1">No fue prematuro</span>
@@ -365,7 +420,26 @@ function filterInstancesRiesgo() {
                   </li>
               </ul>
             </div>
-        <h5 class="modal-title" style="padding: 10px;">Datos del encargado:</h5>
+          <h5 class="modal-title" style="padding: 10px;">Situación actual:</h5>
+          <div class="row" >
+
+              <ul><i>Has click para editar:</i>
+                  <li>Anemia:
+                    <span class="badge badge-pill badge-success" id="anemia_1">No diagnosticado</span>
+                    <span class="badge badge-pill badge-danger" id="anemia_2">Si tiene</span>
+                  </li>
+                  <li>Lactancia y suplementación:
+                    <span class="badge badge-pill badge-warning" id="lactancia_1">Le da suplementos</span>
+                    <span class="badge badge-pill badge-success" id="lactancia_2">La mamá le da de lactar</span>
+                    <span class="badge badge-pill badge-danger" id="lactancia_3">No se la da nada</span>
+                  </li>
+                  <li>Vacunación:
+                    <span class="badge badge-pill badge-danger" id="vacunacion_1">No se ha vacunado</span>
+                    <span class="badge badge-pill badge-success" id="vacunacion_2">Ya se vacunó</span>
+                  </li>
+              </ul>
+            </div>
+        <h5 class="modal-title" style="padding: 10px;">Datos del responsable:</h5>
           <div class="row">
               <ul>
                   <li>Relación con el niño:
