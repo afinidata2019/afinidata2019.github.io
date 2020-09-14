@@ -177,8 +177,7 @@ $('#lactancia_2').click(function() {$( "#lactancia_2" ).toggle(); $( "#lactancia
 $('#lactancia_3').click(function() {$( "#lactancia_3" ).toggle(); $( "#lactancia_1" ).toggle();});
 
 chart10.render();
-chart11.render();
-chart12.render();
+
 document.getElementById("chartContainer10").style.cursor = "pointer";
 $("#detalle_instancias").hide();
 function filterInstances(e) {
@@ -224,14 +223,6 @@ function filterInstancesRiesgo() {
 <div class="container">
 
 <br/>
-  <div class="row">
-    <div class="col-lg">
-      <div id="chartContainer11" style="height: 400px; width: 100%;"></div>
-    </div>
-    <div class="col-lg">
-      <div id="chartContainer12" style="height: 400px; width: 100%;"></div>
-    </div>
-  </div>
     <div class="container">
   <div class="row" style="text-align: center;">
     <div class="col-lg">
@@ -239,8 +230,12 @@ function filterInstancesRiesgo() {
       <h1>2,100</h1>
     </div>
     <div class="col-lg">
-      <h4>Niños que requieren seguimiento</h4>
-      <h1>86</h1>
+      <h4>Niños con antecedentes de riesgo</h4>
+      <h1>178</h1>
+    </div>
+    <div class="col-lg">
+      <h4>Niños con riesgos actuales</h4>
+      <h1>103</h1>
     </div>
   </div>
 </div>
@@ -281,7 +276,8 @@ function filterInstancesRiesgo() {
               <th scope="col">Nacimiento</th>
               <th scope="col">Teléfono</th>
               <th scope="col">Dirección</th>
-              <th scope="col">Riesgo</th>
+              <th scope="col">Antecedentes de Riesgo</th>
+              <th scope="col">Riesgos actuales</th>
               <th scope="col">Info.</th>
               <th scope="col">Reporte</th>
             </tr>
@@ -295,6 +291,7 @@ function filterInstancesRiesgo() {
               <td>13/10/2019</td>
               <td>86753099</td>
               <td>Colonia las Lagunas, 2da av, calle 3</td>
+              <td><span class="badge badge-pill badge-danger">Si tiene</span>
               <td><span class="badge badge-pill badge-danger">Alto</span></td>
               <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
               <td><a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
@@ -307,6 +304,7 @@ function filterInstancesRiesgo() {
               <td>01/05/2019</td>
               <td>86755607</td>
               <td>Colonia Primero de Jilio, cuarta calle en la casa con portón negro</td>
+              <td><span class="badge badge-pill badge-danger">Si tiene</span></td>
               <td><span class="badge badge-pill badge-danger">Alto</span></td>
               <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
               <td><a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
@@ -319,6 +317,7 @@ function filterInstancesRiesgo() {
               <td>20/11/2019</td>
               <td>45892099</td>
               <td>Santa María, quinta avenida, casa 10</td>
+              <td><span class="badge badge-pill badge-danger">Si tiene</span></td>
               <td><span class="badge badge-pill badge-danger">Alto</span></td>
               <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
               <td><a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
@@ -331,7 +330,8 @@ function filterInstancesRiesgo() {
               <td>25/02/2019</td>
               <td>37743198</td>
               <td>Lima, Lima Norte, Colonia Las Amapolas, 3ra avenida calle 7</td>
-              <td><span class="badge badge-pill badge-danger">Alto</span></td>
+              <td><span class="badge badge-pill badge-danger">Si tiene</span></td>
+              <td><span class="badge badge-pill badge-warning">Medio</span></td>
               <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
               <td><a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
             </tr>
@@ -343,7 +343,8 @@ function filterInstancesRiesgo() {
               <td>09/04/2019</td>
               <td>85792455</td>
               <td>Enfrente del centro de salud de lima norte</td>
-              <td><span class="badge badge-pill badge-danger">Alto</span></td>
+              <td><span class="badge badge-pill badge-danger">Si tiene</span></td>
+              <td><span class="badge badge-pill badge-warning">Medio</span></td>
               <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
               <td><a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
             </tr>
@@ -355,7 +356,8 @@ function filterInstancesRiesgo() {
               <td>06/06/2019</td>
               <td>59486861</td>
               <td>Yo vivo cerca del parque, enfrente de la municipalidad</td>
-              <td><span class="badge badge-pill badge-success">Bajo</span></td>
+              <td><span class="badge badge-pill badge-success">No tiene</span></td>
+              <td><span class="badge badge-pill badge-warning">Medio</span></td>
               <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
               <td><a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
             </tr>
@@ -367,7 +369,8 @@ function filterInstancesRiesgo() {
               <td>23/03/2019</td>
               <td>86753099</td>
               <td>San Miguel Petapa, Los Eucaliptos</td>
-              <td><span class="badge badge-pill badge-success">Bajo</span></td>
+              <td><span class="badge badge-pill badge-success">No tiene</span></td>
+              <td><span class="badge badge-pill badge-success">Bajo</span>
               <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
               <td><a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
             </tr>
@@ -379,7 +382,8 @@ function filterInstancesRiesgo() {
               <td>13/10/2019</td>
               <td>86753099</td>
               <td>Para que la quiere?</td>
-              <td><span class="badge badge-pill badge-success">Bajo</span></td>
+              <td><span class="badge badge-pill badge-success">No tiene</span>
+              <td><span class="badge badge-pill badge-success">Bajo</span>
               <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
               <td><a href="https://core.afinidata.com/instances/54510/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
             </tr>
