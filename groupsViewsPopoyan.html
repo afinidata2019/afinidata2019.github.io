@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bootstrap Card</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+.form-control-borderless {
+    border: none;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+.jumbotron, .col-lg {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+}
+.badge{
+  cursor: pointer;
+}
+</style>
+<script>
+$(document).ready(function(){
+	$(window).scroll(function () {
+			if ($(this).scrollTop() > 50) {
+				$('#back-to-top').fadeIn();
+			} else {
+				$('#back-to-top').fadeOut();
+			}
+		});
+		// scroll body to 0px on click
+		$('#back-to-top').click(function () {
+			$('body,html').animate({
+				scrollTop: 0
+			}, 400);
+			$("#detalle_instancias").fadeOut();
+			return false;
+		});
+});
+window.onload = function () {
+var chart10 = new CanvasJS.Chart("chartContainer10", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Factores de riesgo",
+		fontSize: 25
+	},
+	axisY: {
+		title: "Cantidad de niños",
+		fontSize: 10,
+		includeZero: true,
+	},
+	data: [{
+		type: "bar",
+		click: filterInstances,
+		indexLabel: "{y}",
+		toolTipContent: "{label}: {y}",
+		showInLegend: false,
+		legendMarkerColor: "grey",
+		legendText: "Respuestas",
+		includeZero: true,
+		cursor: "pointer",
+		dataPoints: [
+            { y: 30, percent: 30, label: "Madre adolescente" },
+			{ y: 20, percent: 20, label: "No cuenta con estación de lavado" },
+            { y: 50, percent: 50, label: "No cuenta con extractor de humo" },
+			{ y: 40, percent: 40, label: "No reciben lactancia materna" },
+			{ y: 15, percent: 15, label: "No tienen servicio de salud cercano" },
+			{ y: 25, percent: 20, label: "Bebés prematuros" },
+		]
+	}]
+});
+var chart102 = new CanvasJS.Chart("chartContainer102", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Situación actual",
+		fontSize: 25
+	},
+	axisY: {
+		title: "Cantidad de niños",
+		fontSize: 10,
+		includeZero: true,
+	},
+	data: [{
+		type: "bar",
+		click: filterInstances,
+		indexLabel: "{y}",
+		toolTipContent: "{label}: {y}",
+		showInLegend: false,
+		legendMarkerColor: "grey",
+		legendText: "Respuestas",
+		includeZero: true,
+		cursor: "pointer",
+		dataPoints: [
+            { y: 50, percent: 50, label: "No come carne" },
+            { y: 30, percent: 30, label: "No come frutas o verduras" },
+			{ y: 20, percent: 20, label: "No se ha desparasitado" },
+            { y: 30, percent: 10, label: "No se lava las manos" },
+			{ y: 15, percent: 15, label: "No le da de mamar" },
+			{ y: 40, percent: 40, label: "No recibe suplementos" },
+			{ y: 25, percent: 20, label: "No tiene vacunación al día" }
+		]
+	}]
+});
+
+$("#anemia_2").hide();
+$('[id^="anemia_"]').click(function() {
+  $( "#anemia_1" ).toggle();
+  $( "#anemia_2" ).toggle();
+});
+
+$("#prematuro_2").hide();
+$('[id^="prematuro_"]').click(function() {
+  $( "#prematuro_1" ).toggle();
+  $( "#prematuro_2" ).toggle();
+});
+
+$("#vacunacion_2").hide();
+$('[id^="vacunacion_"]').click(function() {
+  $( "#vacunacion_1" ).toggle();
+  $( "#vacunacion_2" ).toggle();
+});
+
+$("#lactancia_2").hide();
+$("#lactancia_3").hide();
+$('#lactancia_1').click(function() {$( "#lactancia_1" ).toggle(); $( "#lactancia_2" ).toggle();});
+$('#lactancia_2').click(function() {$( "#lactancia_2" ).toggle(); $( "#lactancia_3" ).toggle();});
+$('#lactancia_3').click(function() {$( "#lactancia_3" ).toggle(); $( "#lactancia_1" ).toggle();});
+
+chart10.render();
+chart102.render();
+
+document.getElementById("chartContainer10").style.cursor = "pointer";
+document.getElementById("chartContainer102").style.cursor = "pointer";
+$("#detalle_instancias").hide();
+function filterInstances(e) {
+    console.log(e);
+    $("#filtro_label").text("Filtrado por: "+e.dataPoint['label']);
+    $("#detalle_instancias").show();
+    $("html, body").animate({ scrollTop: $("#detalle_instancias").offset().top }, 500);
+}
+
+$("#chartContainer102").hide();
+
+$('.dropdown-menu a').click(function () {
+    $('#factoresButton').text('Mostrar: '+$(this).text());
+    console.log($(this).value);
+    if($(this).text() == 'Factores de riesgo'){
+      $("#chartContainer10").show();
+      $("#chartContainer102").hide();
+    }
+    else{
+      $("#chartContainer10").hide();
+      $("#chartContainer102").show();
+    }
+  });
+
+}
+function filterInstancesRiesgo() {
+    $("#filtro_label").text("Filtrado por: Mayor riesgo");
+    $("#detalle_instancias").show();
+    $("html, body").animate({ scrollTop: $("#detalle_instancias").offset().top }, 500);
+}
+
+
+
+function grafica1(){
+    $("#chartContainer10").show();
+    $("#chartContainer102").hide();
+    $("#dropdownMenuButton").value = "Mostrar: Factores de riesgo";
+}
+
+function grafica2(){
+    $("#chartContainer10").hide();
+    $("#chartContainer102").show();
+    $("#dropdownMenuButton").value = "Mostrar: Situación Actual";
+}
+</script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Afinidata</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="groupsViews.html">Grupo</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="groupsViewsDetailed.html">Detalle</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="group_report.html">Reportes</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h2 class="display-4">Popoyan</h2>
+    <p class="lead">Estrategia de nutrición Popoyan</p>
+  </div>
+</div>
+<div class="container">
+
+<br/>
+    <div class="container">
+  <div class="row" style="text-align: center;">
+    <div class="col-lg">
+      <h4>Niños atendidos por Afinidata</h4>
+      <h1>2,100</h1>
+    </div>
+    <div class="col-lg">
+      <h4>Niños con antecedentes de riesgo</h4>
+      <h1>178</h1>
+    </div>
+    <div class="col-lg">
+      <h4>Niños con riesgos actuales</h4>
+      <h1>103</h1>
+    </div>
+  </div>
+</div>
+<br/>
+
+  <div class="dropdown" style="width: 300px !important;">
+<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" id="factoresButton">
+Mostrar: Factores de riesgo
+</button>
+<div class="dropdown-menu" id="SelectMe">
+   <a class="dropdown-item">Factores de riesgo</a>
+   <a class="dropdown-item">Situación actual</a>
+</div>
+</div>
+  <div class="row">
+    <div class="col-lg">
+      <div id="chartContainer10" style="height: 400px; width: 100%;"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg">
+      <div id="chartContainer102" style="height: 400px; width: 100%;"></div>
+    </div>
+  </div>
+    <div class="row">
+    <div class="col-lg">
+      <div>Haz click en una barra para filtrar o
+          <button type="button" class="btn-sm btn-primary" onclick="filterInstancesRiesgo()">Filtrar por mayor riesgo</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="detalle_instancias">
+    <br/><br/>
+
+    <div class="container">
+      <div class="row-center" style="width:100%; text-align:center;">
+        <div class="col-lg">
+          <h3 id="filtro_label">Filtrado por:</h3>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+    <div class="row">
+        <table class="table">
+          <thead>
+            <tr>
+                <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Encargado</th>
+              <th scope="col">Edad</th>
+              <th scope="col">Nacimiento</th>
+              <th scope="col">Teléfono</th>
+              <th scope="col">Dirección</th>
+              <th scope="col">Antecedentes de Riesgo</th>
+              <th scope="col">Riesgos actuales</th>
+              <th scope="col">Info.</th>
+              <th scope="col">Reporte</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <th>Estuardo</th>
+              <td>Elías Santiago</td>
+              <td>10 meses</td>
+              <td>13/10/2019</td>
+              <td>86753099</td>
+              <td>Colonia las Lagunas, 2da av, calle 3</td>
+              <td><span class="badge badge-pill badge-danger">Si tiene</span>
+              <td><span class="badge badge-pill badge-danger">Alto</span></td>
+              <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
+              <td><a href="https://contentmanager.afinidata.com/instances/54736/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <th>Pedro</th>
+              <td>José F.</td>
+              <td>3 meses</td>
+              <td>01/05/2019</td>
+              <td>86755607</td>
+              <td>Colonia Primero de Jilio, cuarta calle en la casa con portón negro</td>
+              <td><span class="badge badge-pill badge-danger">Si tiene</span></td>
+              <td><span class="badge badge-pill badge-danger">Alto</span></td>
+              <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
+              <td><a href="https://contentmanager.afinidata.com/instances/54736/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <th>Alejandro</th>
+              <td>Mónica Pérez</td>
+              <td>9 meses</td>
+              <td>20/11/2019</td>
+              <td>45892099</td>
+              <td>Santa María, quinta avenida, casa 10</td>
+              <td><span class="badge badge-pill badge-danger">Si tiene</span></td>
+              <td><span class="badge badge-pill badge-danger">Alto</span></td>
+              <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
+              <td><a href="https://contentmanager.afinidata.com/instances/54736/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <th>María</th>
+              <td>Andrea H.</td>
+              <td>18 meses</td>
+              <td>25/02/2019</td>
+              <td>37743198</td>
+              <td>Lima, Lima Norte, Colonia Las Amapolas, 3ra avenida calle 7</td>
+              <td><span class="badge badge-pill badge-danger">Si tiene</span></td>
+              <td><span class="badge badge-pill badge-warning">Medio</span></td>
+              <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
+              <td><a href="https://contentmanager.afinidata.com/instances/54736/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <th>Clara</th>
+              <td>Lucía Torres</td>
+              <td>4 meses</td>
+              <td>09/04/2019</td>
+              <td>85792455</td>
+              <td>Enfrente del centro de salud de lima norte</td>
+              <td><span class="badge badge-pill badge-danger">Si tiene</span></td>
+              <td><span class="badge badge-pill badge-warning">Medio</span></td>
+              <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
+              <td><a href="https://contentmanager.afinidata.com/instances/54736/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
+            </tr>
+            <tr>
+              <th scope="row">6</th>
+              <th>Rodrigo</th>
+              <td>Fernando Reyes</td>
+              <td>2 meses</td>
+              <td>06/06/2019</td>
+              <td>59486861</td>
+              <td>Yo vivo cerca del parque, enfrente de la municipalidad</td>
+              <td><span class="badge badge-pill badge-success">No tiene</span></td>
+              <td><span class="badge badge-pill badge-warning">Medio</span></td>
+              <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
+              <td><a href="https://contentmanager.afinidata.com/instances/54736/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
+            </tr>
+            <tr>
+              <th scope="row">7</th>
+              <th>Héctor</th>
+              <td>Laura Flores</td>
+              <td>17 meses</td>
+              <td>23/03/2019</td>
+              <td>86753099</td>
+              <td>San Miguel Petapa, Los Eucaliptos</td>
+              <td><span class="badge badge-pill badge-success">No tiene</span></td>
+              <td><span class="badge badge-pill badge-success">Bajo</span>
+              <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
+              <td><a href="https://contentmanager.afinidata.com/instances/54736/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
+            </tr>
+            <tr>
+              <th scope="row">8</th>
+              <th>Inés</th>
+              <td>Gustavo A. D.</td>
+              <td>10 meses</td>
+              <td>13/10/2019</td>
+              <td>86753099</td>
+              <td>Para que la quiere?</td>
+              <td><span class="badge badge-pill badge-success">No tiene</span>
+              <td><span class="badge badge-pill badge-success">Bajo</span>
+              <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-address-card fa-lg"></i></button></td>
+              <td><a href="https://contentmanager.afinidata.com/instances/54736/report/" class="btn btn-primary" role="button" target="_blank" aria-pressed="true"><i class="fas fa-chart-pie fa-lg"></i></a></td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+</div>
+
+</div>
+<br/>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">María Perez</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+        <h5 class="modal-title" style="padding: 10px;">Factores de riesgo:</h5>
+          <div class="row" >
+              <ul>
+                  <li>Nacimiento con bajo peso:
+                    <span class="badge badge-pill badge-warning">Bajo peso</span>
+                  </li>
+                  <li>Fue prematuro:
+                        <span class="badge badge-pill badge-success" id="prematuro_1">No fue prematuro</span>
+                        <span class="badge badge-pill badge-warning" id="prematuro_2">Fue prematuro</span>
+                  </li>
+                  <li>Aprendizaje:
+                      <span class="badge badge-pill badge-danger">Tiene problemas de aprendizaje</span>
+                  </li>
+                  <li>Discapacidad o riesgo:
+                    <span class="badge badge-pill badge-warning">Tiene discapacidad</span>
+                  </li>
+              </ul>
+            </div>
+          <h5 class="modal-title" style="padding: 10px;">Situación actual:</h5>
+          <div class="row" >
+
+              <ul><i>Has click para editar:</i>
+                  <li>Anemia:
+                    <span class="badge badge-pill badge-success" id="anemia_1">No diagnosticado</span>
+                    <span class="badge badge-pill badge-danger" id="anemia_2">Si tiene</span>
+                  </li>
+                  <li>Lactancia y suplementación:
+                    <span class="badge badge-pill badge-warning" id="lactancia_1">Le da suplementos</span>
+                    <span class="badge badge-pill badge-success" id="lactancia_2">La mamá le da de lactar</span>
+                    <span class="badge badge-pill badge-danger" id="lactancia_3">No se la da nada</span>
+                  </li>
+                  <li>Vacunación:
+                    <span class="badge badge-pill badge-danger" id="vacunacion_1">No se ha vacunado</span>
+                    <span class="badge badge-pill badge-success" id="vacunacion_2">Ya se vacunó</span>
+                  </li>
+              </ul>
+            </div>
+        <h5 class="modal-title" style="padding: 10px;">Datos del responsable:</h5>
+          <div class="row">
+              <ul>
+                  <li>Relación con el niño:
+                        <span class="badge badge-pill badge-success">Mamá</span>
+                  </li>
+                  <li>Educación:
+                      <span class="badge badge-pill badge-danger">No asistió a la escuela</span>
+                  </li>
+                  <li>Edad:
+                     <span class="badge badge-pill badge-success">De 30 a 40</span>
+                  </li>
+                  <li>Cuenta con apoyo:
+                     <span class="badge badge-pill badge-success">Si cuenta con el apoyo de su pareja</span>
+                  </li>
+              </ul>
+            </div>
+            <h5 class="modal-title" style="padding: 10px;">Seguimiento:</h5>
+            <div class="row" style="width:100%; padding-left:40px;">
+                <select class="form-control">
+                  <option>Sin seguimiento</option>
+                  <option>Por llamar</option>
+                  <option>Se intentó contactar</option>
+                  <option>Ya se contactó</option>
+                </select>
+            </div>
+            <h5 class="modal-title" style="padding: 10px;">Observaciones:</h5>
+            <div class="row" style="width:100%; padding-left:40px;">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="2">Ya se le pusieron las vacunas del primer mes.</textarea>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Regresar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<br/><a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>
+</body>
+</html>
